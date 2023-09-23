@@ -1,17 +1,16 @@
-import java.util.Scanner;
+# Python program to shuffle a deck of card
 
-public class EvenOdd {
+# importing modules
+import itertools, random
 
-    public static void main(String[] args) {
+# make a deck of cards
+deck = list(itertools.product(range(1,14),['Spade','Heart','Diamond','Club']))
 
-        Scanner reader = new Scanner(System.in);
+# shuffle the cards
+random.shuffle(deck)
 
-        System.out.print("Enter a number: ");
-        int num = reader.nextInt();
+# draw five cards
+print("You got:")
+for i in range(5):
+   print(deck[i][0], "of", deck[i][1])
 
-        if(num % 2 == 0)
-            System.out.println(num + " is even");
-        else
-            System.out.println(num + " is odd");
-    }
-}
